@@ -1,0 +1,45 @@
+可买状态：
+			<dt class="user_img fl wd100">
+					<a href="/fresh/findPersonalFiles2.action?ownerid=1144310" target="_blank">
+							<img src="http://img.eloancn.com/userData/group20/M00/2A/CD/wKgKcVYgYzCAQP4HAAASNE7OVts764.jpg" alt="借贷者头像-*影"/>								
+					</a>
+				</dt>
+				<dd class="wd300 pdl10 fl">
+					<h3 class="h30 mt10">
+							<span class="bao fl" title="逾期保障">保</span>
+                    	<a href="http://www.eloancn.com:80/loan/loandetail.action?tenderid=191247&cry=f81ad0fd " target="_blank" class="fl">【农户贷款】 资金周转。</a>
+                    </h3>
+                    <p class="clear">
+                     	借款人：*影
+                      		[廊坊市]
+                     	<span class="colorE6 pdl10">B</span>
+                   	</p>
+				</dd>
+				<dd class="wd140 fl">
+					<p class="colorCb mt10">￥60,000</p>
+                    <p class="colorE6">
+							<span id='interestrate_191247_2_1144310'>18%</span>/年
+                    </p>
+				</dd>
+				<dd class="wd130 fl pdl10">
+                 	<p class=" mt10"><span class="colorF0">10</span>个月</p>
+                    <p class="">还本付息</p>
+               	</dd>
+               	<dd class="wd130 fl">
+                    	<p class="mt20" ><span class="plan"><em style="width:60.0%;background-color:#FF6600;">60%</em></span></p>
+              	</dd>
+               	<dd class="wd110 fl pdl10">
+               	<input type="hidden" id="needAmount_191247" value="24000.00"/>
+                        <input type="hidden" id="cryid_191247" value="f81ad0fd"/>
+	                    	<p class="mt10" id="191247" style="*height:40px;"/></p>
+	                    	<script type="text/javascript">countdown(191247,604199,1);</script>
+	                    	<a class="fast_money mt8"  href="javascript:void(0)" onclick="lender.fastLend('191247')">快速投资</a>
+              	</dd>
+              	
+满标状态（只列出了有变化的部分）：
+             	<dd class="wd110 fl pdl10">
+               	<input type="hidden" id="needAmount_190853" value="0.00"/>     
+               			<p class="mt10 colorAE" id="190853" style="*height:40px;"/></p>
+                    	<script type="text/javascript">countdown(190853,586220,12);</script>
+                    		<a class="fast_money_disable mt8" href="javascript:void(0)">已满标</a>	
+              	</dd>
