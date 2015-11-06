@@ -62,6 +62,7 @@ public class MainExecutor
 			TenderAction.setRefreshTimeOut(refreshTimeOut);
 			TenderAction.setBuyTimeOut(buyTimeOut);
 			TenderAction.setBalance(balance);
+			TenderAction.setLeftAmount(leftAmount);
 			TenderAction.setMultiThread(multiThread);
 			while (isRun) {
 				try {

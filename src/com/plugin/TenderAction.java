@@ -48,11 +48,11 @@ public class TenderAction
 	private static String account;
 	private static String payPassword = "";
 	private static int payAmount = 0;
-	private static int balance = 2000000;
+	private static int balance;
 	private static int minRate = 0;
 	private static int refreshTimeOut;
 	private static int buyTimeOut;
-	private static int leftAmount=2000000;
+	private static int leftAmount;
 	private static JTextArea logArea;
 	private static boolean multiThread;
 	private static List<String> buyedList = new ArrayList();
@@ -103,6 +103,7 @@ public class TenderAction
 
 	public static void setLeftAmount(int leftAmount1) {
 		leftAmount = leftAmount1;
+		System.out.println("leftAmount="+leftAmount);
 	}
 
 	public static int getMinRate() {
@@ -218,7 +219,7 @@ public class TenderAction
 			HttpEntity entity = response.getEntity();
 			if (entity != null) {
 				String html = EntityUtils.toString(entity);
-				EloanCodeUtils.printlog("getTender="+html);
+				//EloanCodeUtils.printlog("getTender="+html);
 				JSONObject jsonObject = JSONObject.fromObject(html);
 				return jsonObject.getJSONObject("tender");
 			}
@@ -250,6 +251,7 @@ public class TenderAction
 		if (payAmount != 0) {
 			amount = amount > payAmount ? payAmount : amount;
 		}
+		amount = amount > leftAmount ? leftAmount : amount;
 		renderLog("needAmount="+needAmount);
 		renderLog("balance="+balance);
 		renderLog("payAmount="+payAmount);
@@ -329,13 +331,22 @@ public class TenderAction
 								TenderAction.buyedList.add(tenderRate.getTenderId());
 								int amount = ((Integer)paramsMap.get("amount")).intValue();
 
-								//TenderAction.access$102(TenderAction.balance - amount);
+								TenderAction.balance=TenderAction.balance - amount;
+								TenderAction.leftAmount=TenderAction.leftAmount - amount;
 
 								String moneyMsg = "账户余额:" + TenderAction.balance;
 								TenderAction.renderLog(moneyMsg);
 								if (TenderAction.balance < 10)
 								{
 									String msg2 = "+++++账户余额不足，停止监控++++";
+									isRun = false;
+									TenderAction.renderLog(msg2);
+								}
+								moneyMsg = "剩余额度:" + TenderAction.leftAmount;
+								TenderAction.renderLog(moneyMsg);
+								if (TenderAction.leftAmount < 10)
+								{
+									String msg2 = "+++++剩余额度不足，停止监控++++";
 									isRun = false;
 									TenderAction.renderLog(msg2);
 								}
