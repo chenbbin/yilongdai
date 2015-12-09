@@ -171,7 +171,7 @@ public class TenderAction
 			if (entity != null) {
 				String html = EntityUtils.toString(entity);
 				html = StringUtils.substringBetween(html, "lendtable", "pagebott");
-				//EloanCodeUtils.printlog(html);
+				EloanCodeUtils.printlog(html);
 				String[] ss = html.split("user_img");
 				EloanCodeUtils.printlog("ss.length="+ss.length);
 				for (int i = 1; i < ss.length; i++) {

@@ -21,7 +21,7 @@ public class MainExecutor
 	private static boolean isRun = true;
 	private static final long syncWait = 500L;
 	private static final long syncWaitLong = 20000L;
-	private static final int[][][] startSaleTimes = { { { 10, 59, 0 }, { 11, 4, 0 } }, { { 15, 59, 0 }, { 16, 4, 0 } } };
+	private static final int[][][] startSaleTimes = { { { 10, 50, 0 }, { 11, 10, 0 } }, { { 15, 50, 0 }, { 16, 10, 0 } } };
 
 	protected static void renderLog(final JTextArea logArea, final String msg) {
 		if (logArea != null) {
